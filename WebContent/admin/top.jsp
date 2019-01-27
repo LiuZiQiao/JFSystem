@@ -36,7 +36,7 @@
     		{
     			if(confirm("确定要退出吗?"))
     			{
-    				window.parent.location="/JFSystem/login.jsp";	
+    				window.parent.location="/JFSystem/AdminServlet?method=adminLogout";	
     			}
     		}
     </script>

@@ -12,9 +12,9 @@
 <title>Insert title here</title>
 </head>
 <frameset rows="120,*,30" cols="*" framespacing="0" frameborder="no" border="0">
-	<frame src="/JFSystem/admin/top.jsp" name="topFrame" scrolling="no" noresize="noresize" id="topFrame">
-<frame src="/JFSystem/admin/center.jsp" name="centerFrame" scrolling="no" noresize="noresize" id="centerFrame">
-<frame src="/JFSystem/admin/down.jsp" name="downFrame" scrolling="no" noresize="noresize" id="downFrame">
+	<frame src="/JFSystem/atea/top.jsp" name="topFrame" scrolling="no" noresize="noresize" id="topFrame">
+<frame src="/JFSystem/atea/center.jsp" name="centerFrame" scrolling="no" noresize="noresize" id="centerFrame">
+<frame src="/JFSystem/atea/down.jsp" name="downFrame" scrolling="no" noresize="noresize" id="downFrame">
 </frameset>
 
 <body>

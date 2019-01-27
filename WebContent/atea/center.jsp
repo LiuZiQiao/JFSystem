@@ -4,9 +4,36 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>Insert title here</title>
+  <meta http-equiv="pragma" content="no-cache"/>
+    <meta http-equiv="cache-control" content="no-cache"/>
+    <meta http-equiv="expires" content="0"/>
+    <meta http-equiv="keywords" content="keyword1,keyword2,keyword3"/>
+    <meta http-equiv="description" content="this is my page"/>
+    <script type="text/javascript">
+        	body{
+    		margin-left: 0px;
+    		margin-top: 0px;
+    		margin-right: 0px;
+			margin-bottom: 0px;
+    	}
+    	.STYLE1(font-size:12px)
+    	.STYLE2{
+    			color:#03515d;
+    			font-size:12px;
+    	}
+    	</script>
 </head>
 <body>
-
+	<table width="100%" height="100%" border="0" cellpadding="0" cellspacing="0">
+		<tr>
+			<td width="8" background="/JFSystem/images/main_29.gif">	</td>
+			<td align="center" valign="top">
+				<iframe name="11" src="/JFSystem/admin/middel.jsp" height="100">
+				浏览器不支持嵌入式框架，或被配置为不显示嵌入式框架。
+				</iframe>
+			</td>
+			<td width="7" background="/JFSystem/images/main_32.gif"></td>
+		</tr>
+	</table>
 </body>
 </html>

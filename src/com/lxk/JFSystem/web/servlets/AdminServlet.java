@@ -29,5 +29,11 @@ public class AdminServlet extends BaseServlet {
 			return null;
 		}
 	}
-
+	
+	public String  adminLogout(HttpServletRequest request, HttpServletResponse response) throws IOException, SQLException
+	{
+		request.getSession().invalidate();
+		response.sendRedirect(request.getContextPath()+"/login.jsp");
+		return null;
+	}
 }

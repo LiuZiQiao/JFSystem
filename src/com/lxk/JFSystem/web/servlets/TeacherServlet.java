@@ -8,6 +8,7 @@ import javax.servlet.http.HttpServletResponse;
 
 import com.lxk.JFSystem.domain.Teacher;
 import com.lxk.JFSystem.service.TeacherService;
+import com.lxk.JFSystem.utils.PageModel;
 import com.lxk.JFSystem.web.base.BaseServlet;
 
 public class TeacherServlet extends BaseServlet {
@@ -29,5 +30,23 @@ public class TeacherServlet extends BaseServlet {
 			response.sendRedirect(request.getContextPath()+"/atea/index.jsp");
 			return null;
 		}
+		
+	}
+	
+	public String  teaLogout(HttpServletRequest request, HttpServletResponse response) throws IOException, SQLException
+	{
+		request.getSession().invalidate();
+		response.sendRedirect(request.getContextPath()+"/login.jsp");
+		return null;
+	}
+	
+	public String  findTeacherWithPage(HttpServletRequest request, HttpServletResponse response) throws IOException, SQLException{
+		
+		int currentPage = Integer.parseInt(request.getParameter("num"));
+		TeacherService ms = new TeacherService();
+		PageModel pageModel = ms.findTeacherWithPage(currentPage);
+		
+		request.setAttribute("page",pageModel);
+		return "/atea/teaMana.jsp";
 	}
 }
