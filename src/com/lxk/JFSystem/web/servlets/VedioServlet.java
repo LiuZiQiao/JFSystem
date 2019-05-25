@@ -15,7 +15,9 @@ import javax.servlet.http.HttpServletResponse;
 
 import org.apache.tomcat.util.http.fileupload.IOUtils;
 
+import com.lxk.JFSystem.domain.Document;
 import com.lxk.JFSystem.domain.Vedio;
+import com.lxk.JFSystem.service.DocService;
 import com.lxk.JFSystem.service.VedioService;
 import com.lxk.JFSystem.utils.DownLoadUtils;
 import com.lxk.JFSystem.utils.PageModel;
@@ -69,17 +71,17 @@ public class VedioServlet extends BaseServlet{
 				return "/play/playVedio.jsp";
 		}
 			
-			public String downloadVedio(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException, SQLException {
-				String  vedioId = request.getParameter("id");
-				VedioService vedioService = new VedioService();
-				Vedio  vedio = vedioService.findVedioByVid(vedioId);
+			public String DownDoc(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException, SQLException {
+				String  docId = request.getParameter("id");
+				DocService docService = new DocService();
+				Document  document = docService.findDocByVid(docId);
 				//找到视频的绝对路径
 				String realPath = getServletContext().getRealPath("/upload/");
 				//实例一个file对象，表示下载的视频
-				File file = new File(realPath,vedio.getVedioAttachment());
+				File file = new File(realPath,document.getDocAttachment());
 				//通过response对象设置一对消息头
 //				response.setHeader("Content-disposition", "attachment;filename="+vedio.getVedioAttachment());
-				DownLoadUtils.setConentType(request, vedio.getVedioAttachment(), response);
+				DownLoadUtils.setConentType(request, document.getDocAttachment(), response);
 				//通过file获取输入流
 				InputStream is = new FileInputStream(file);
 				OutputStream os = response.getOutputStream();

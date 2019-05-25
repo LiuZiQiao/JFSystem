@@ -22,81 +22,30 @@
 	</style>
 </head>
 <body>
-	   <div id="weapper">
-            <div id="header">
-
-            </div>
-        
-        	   <div id="left">
-        	   			<jsp:include flush="true"  page="/site/left.jsp"></jsp:include>
-        	   </div>
                 
-                <div id="right" ">
+                <div id="right" >
 	                <h2>教学视频 </h2>
-			            <div id="welcome">
 			                <div>
 			                	<div class="c1-body">
                                 <c:forEach items="${page.list }" var="v">				
 									<div class="c1-bline" style="padding:7px 0px;">
+									 <ul>
+			                			<li>
 										<div class="f-left">
-											<img src="/JFSystem/img/head-mark4.gif" aligin="middle" class="i">
-											<a href="${pageContext.request.contextPath }/VedioServlet?method=findVedioByVid&id=${v.vedioId}" >${v.vedioName}</a>
+											<!-- 	<img src="/JFSystem/img/head-mark4.gif" aligin="middle" class="i"> -->
+											<a href="${pageContext.request.contextPath }/VedioServlet?method=findVedioByVid&id=${v.vedioId}"  target="rightframe">${v.vedioName}</a>
 										</div>	 
 										<div class="f-right">${v.uploadTime}</div>  <hr style="border:1px dashed #000; height:1px"/>             						
-										<div claess="clear"></div>
+											<div class="clear"></div>
+			                			</li>
+			                		</ul>
 			                		</div>
                                 </c:forEach>
-                           <%--
-                                <div style="text-align:center">
-                                			共${page.totalPageNum }页/第${page.currentPageNum }页
-                                			<a href="${pageContext.request.contextPath }/VedioServlet?method=findVedioWithPage&num=1">首页</a>
-                                			<a href="${pageContext.request.contextPath }/VedioServlet?method=findVedioWithPage&num=${page.prevPageNum}">上一页</a>
-											<c:forEach begin="${page.startPage }"  end="${page.endPage}"  var="i">
-											<a href="${pageContext.request.contextPath }/VedioServlet?method=findVedioWithPage&num=${i}">${i }</a>
-											</c:forEach>
-                                			<a href="${pageContext.request.contextPath }/VedioServlet?method=findVedioWithPage&num=${page.nextPageNum}">下一页</a>
-                                			<a href="${pageContext.request.contextPath }/VedioServlet?method=findVedioWithPage&num=${page.totalPageNum}">末页</a>
- 			                                <input type="text" name="pagenum" id="pagenum" size="1"/>
- 			                                <input type="button" onclieck="jump()" value="前往"/>
-											<script type="text/javascript">
-												function jump(){
-													var totalPageNum = ${page.totalPageNum};
-													var pagenum=document.getElementById("pagenum").value;
-													var reg = /^[1-9][0-9]{0,1}$/;
-													if(!reg.test(pagenum))
-													{
-														alert("请输入符合规定的数");
-														return ;
-													}
-													
-													if(parseInt(pagenum)>parseInt(totalpage))
-													{
-														alert("不能大于总页数");
-														return;
-													}
-													
-													window.location.href="${pageContext.request.contextPath}/VedioSsrvlet&num="+pagenum;
-												}
-											
-											</script> 
-                                </div>
-                                  --%>
                         		<%@ include  file ="/jsp/pageFile.jsp" %>  
-                              
-                        		<!--<jsp:include flush="true"  page="/jsp/pageFile.jsp"></jsp:include>
-                    -->
-                                    <div class="pg-3"></div>
+                        		<!--<jsp:include flush="true"  page="/jsp/pageFile.jsp"></jsp:include>  -->
 			                	</div>
-                            </div>
-		                </div>
-		            	<%@ include file="/site/footer.jsp" %>
-                </div>
+			                	</div>
+			               </div>
                 <div class="clear"></div>
-                <div id="footer">
-                    <div id="copyright">
-                        Copyright &copy;点心网络文化工作室&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="/JFSystem/site/Instruction.jsp">欢迎加入</a>
-                    </div>
-                </div>
-        </div>
 </body>
 </html>

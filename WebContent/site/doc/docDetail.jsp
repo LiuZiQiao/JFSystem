@@ -21,7 +21,7 @@
 		.clear{clear:both}
 	</style>
 	<script type="text/javascript" src="${pageContext.request .contextPath}/js/public.js"></script>
-	
+	<!-- 
 	<script type="text/javascript">
 			function down1(path,oIdName)
 			{
@@ -35,28 +35,21 @@
 			}
 	
 	</script>
+	 -->
 </head>
 <body>
-                <div id="right" ">
-	                <h2>教学视频 </h2>
-			            <div id="welcome">
-			                <div>
+                <div id="right">
+	                <h2>教学资料 </h2>
 			                	<div class="c1-body">
 			                		<table width="100%" border="0">
 			                			<tr>
-			                				<td align="center">${vedio.vedioName}<hr/></td>
+			                				<td align="center">文档名：${doc.docName}<hr/></td>
 			                			</tr>
-			                			<tr>
-			                				<td aligin="center" style="word-break:break-all;">视频介绍
-			                				${vedio.vedioPro }
-			                				<hr/>
-			                				</td>
-			                			</tr>
-			                			
 			                			<tr>
 			                				<td aligin="center">
-			                					<a href="${pageContext.request.contextPath }/VedioServlet?method=downloadVedio&id=${vedio.vedioId}" style="font-size:13px;  color:red">下载</a>
-			                					<a href="${pageContext.request.contextPath }/VedioServlet?method=playVedioById&id=${vedio.vedioId}" class="pn-Loperator" style="color:red">播放</a>
+			                					<a href="${pageContext.request.contextPath }/DocServlet?method=ViewContext&id=${doc.docId}" style="font-size:13px;  color:red">查看</a>
+			                				<!-- 	<a href="${pageContext.request.contextPath }/DocServlet?method=DownDoc&id=${doc.docId}" style="font-size:13px;  color:red">下载</a>
+			                					 -->
 			                					<hr/>
 			                				</td>
 			                			</tr>
@@ -67,16 +60,5 @@
 			                		</table>		
 			                	</div>
                             </div>
-                        <!--     <p class="more"><a href="/JFSystem/site/vedio/vedioAll.jsp">more</a></p>  -->
-		                </div>
-                </div>
-                <div class="clear"></div>
-                <div id="footer">
-                    <div id="copyright">
-                        Copyright &copy;点心网络文化工作室&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="/JFSystem/site/Instruction.jsp">欢迎加入</a>
-                    </div>
-                    <div id="footerline"></div>
-                </div>
-        </div>
 </body>
 </html>

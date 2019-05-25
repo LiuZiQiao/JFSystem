@@ -19,26 +19,19 @@
 	</style>
 </head>
 <body>
-	   <div id="weapper">
-            <div id="header">
-
-            </div>
-        
-        	   <div id="left">
-        	   			<jsp:include flush="true"  page="/site/left.jsp"></jsp:include>
-        	   </div>
-                
                 <div id="right" ">
 	                <h2>留言互动 </h2>
 			            <div id="welcome">
 			                <div>
 			                	<div class="c1-body">
 			                		<div style="width:100%;height:200px;border:0px solid green;margin-top:100px">
-										<form action="${pageContext.request.contextPath }/MessageServlet?method=addMessage"  name="formAdd"  id="fm1" method="post">
+										<form action="${pageContext.request.contextPath }/MessageServlet?method=addMessage"  target="rightframe" name="formAdd"  id="fm1" method="post">
 												<table align="center" border="0" cellpadding="4" cellspacing="1" bgcolor="#CBD8AC">
+	<!--  
 													<tr bgcolor="#EEF4EA">
 														<td colspan="3" background="/...////img/" class="title"><span>信息交流</span></td>
 													</tr>
+													-->
 													<tr align="center" bgcolor="#FFFFFF"  onMouseMove="javascript:this.bgColor='red';" onMouseOut="javascript:this.bgColor='red';">
 														<td width="25%" bgcolor="#FFFFFF" align="right">
 														信息内容:

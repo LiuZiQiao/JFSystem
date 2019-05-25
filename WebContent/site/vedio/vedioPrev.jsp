@@ -22,15 +22,6 @@
 	</style>
 </head>
 <body>
-	   <div id="weapper">
-            <div id="header">
-
-            </div>
-        
-        	   <div id="left">
-        	   			<jsp:include flush="true"  page="/site/left.jsp"></jsp:include>
-        	   </div>
-                
                 <div id="right" ">
 	                <h2>教学视频 </h2>
 			            <div id="welcome">
@@ -40,11 +31,11 @@
 									<div class="c1-bline" style="padding:7px 0px;">
 										<ul>
 											<li >
-											<%--<div class="f-left"> --%>
-												<a href="${pageContext.request.contextPath }/VedioServlet?method=findVedioByVid&id=${v.vedioId}" >${v.vedioName}</a>
-											<%--</div> --%>										
-											<div class="f-right">${v.uploadTime}</div>       <hr style="border:1px dashed #000; height:1px"/>    						
-											<div claess="clear"></div>
+											<div class="f-left">
+												<a href="${pageContext.request.contextPath }/VedioServlet?method=findVedioByVid&id=${v.vedioId}  " target="rightframe" >${v.vedioName}</a>
+											</div>
+											<div class="f-right">${v.uploadTime}</div>  <hr style="border:1px dashed #000; height:1px"/>    						
+											<div class="clear"></div>
 											</li> 
 										</ul>
 			                		</div>
@@ -53,18 +44,9 @@
                                     <div class="pg-3"></div>
 			                	</div>
                             </div>
-                            <p class="more"><a href="${pageContext.request.contextPath }/VedioServlet?method=findVedioWithPage&num=1">more</a></p>
+                            <p class="more" style="right"><a href="${pageContext.request.contextPath }/VedioServlet?method=findVedioWithPage&num=1" target="rightframe">more</a></p>
 		                </div>
-		            	<%@ include file="/site/footer.jsp" %>
                 </div>
                 <div class="clear"></div>
-
-                <div id="footer">
-                    <div id="copyright">
-    Copyright &copy;点心网络文化工作室&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="/JFSystem/site/Instruction.jsp">欢迎加入</a>
-
-                    </div>
-                </div>
-        </div>
 </body>
 </html>

@@ -37,12 +37,12 @@ public class StuServlet extends BaseServlet{
 		
 		if (null != student) {
 			request.getSession().setAttribute("stu", student);
-			response.sendRedirect(request.getContextPath()+"/site/index.jsp");
+			response.sendRedirect(request.getContextPath()+"/site/userlogin/userlogin.jsp");
 			return null;
 		}else {
 			request.setAttribute("msg", "密码错误");
 			
-			return  "/site/index.jsp";
+			return  "/site/userlogin/userlogin.jsp";
 		}
 	}
 	
@@ -50,7 +50,7 @@ public class StuServlet extends BaseServlet{
 	public String stuLogout(HttpServletRequest request, HttpServletResponse response) throws Exception{
 		request.getSession().invalidate();
 		
-		response.sendRedirect(request.getContextPath()+"/site/index.jsp");
+		response.sendRedirect(request.getContextPath()+"/site/userlogin/userlogin.jsp");
 		return null;
 	}
 }

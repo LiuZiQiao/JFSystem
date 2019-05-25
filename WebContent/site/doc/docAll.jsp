@@ -23,25 +23,23 @@
 </head>
 <body>
                 <div id="right" ">
-	                <h2>留言互动 </h2>
-			            <div id="welcome">
-			                <div>
+	                <h2>教学资料 </h2>
 			                	<div class="c1-body">
-                                <c:forEach items="${page.list }" var="v" varStatus="sta">				
+                                <c:forEach items="${page.list }" var="v">				
 									<div class="c1-bline" style="padding:7px 0px;">
+										<ul>
+										<li>
 										<div class="f-left">
-										<!-- 	<img src="/JFSystem/img/head-mark4.gif" aligin="middle" class="img-vm"> -->
-											<a href="${pageContext.request.contextPath }/MessageServlet?method=findMessageWithId&id=${v.messageId}"  target="rightframe">${v.content}</a>
+											<a href="${pageContext.request.contextPath }/DocServlet?method=findDocByVid&id=${v.docId}"  target="rightframe">${v.docName}</a>
 										</div>	 
-										<div class="f-right">${v.leaveWordTime}</div> <hr style="border:1px dashed #000; height:1px"/>          						
-										<div claess="clear"></div>
+										<div class="f-right">${v.uploadTime}</div>  <hr style="border:1px dashed #000; height:1px"/>             						
+										<div class="clear"></div>
+										</li>
+										</ul>
 			                		</div>
                                 </c:forEach>
-									<center><a href="${pageContext.request.contextPath }/MessageServlet?method=addMessageUI" target="rightframe" style="color:black">发布留言</a></center>
-                                    <div class="pg-3"></div>
-                                    <%@ include  file ="/jsp/pageFile.jsp" %>  
+                        		<%@ include  file ="/jsp/pageFile.jsp" %>  
 			                	</div>
-                            </div>
-		                </div>
-                </div>
+			             	</div>
+</body>
 </html>

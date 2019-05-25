@@ -16,13 +16,21 @@
     <script type="text/javascript" src="${pageContext.request .contextPath}/js/jQuery.js"></script>
     <script type="text/javascript" src="${pageContext.request .contextPath}/js/jquery-2.1.0.min.js"></script>
 
+<style type="text/css">
+
+#div2{
+	width:300px;
+	height:300px;
+	background-color:#FFFFCE;
+}
+</style>
 </head>
 <body>
 <table border="0" cellSpacing="3" width="178" height="22">
                 <tr>
                     <td height="22" vAlign="middle" width="100%">
 	                   <c:if test="${empty stu }">
-	                        <form action="${pageContext.request.contextPath}/StuServlet?method=stuLogin" name="ThisForm" method="post" id="fm">
+	                        <form action="${pageContext.request.contextPath}/StuServlet?method=stuLogin" name="ThisForm" method="post" id="fm" target="loginframe">
 	                            <table cellspacing="0" cellspacing="0" width="98%" aligin="center" border="0" height="60">
 	                                <tr>
 	                                    <td align="center" colspan="2" height="10"></td>
@@ -50,7 +58,6 @@
 	                                    <td align="left">
 	                                    <input type="button"  onclick="checkLogin()" id="btnLogin"  value="登录" style="border: #ccc 1px solid;background-color:#FFFFFF;font-size:12px;font-family:微软雅黑;width:50px;"/>
 	                                    <input type="reset" value="重置"  style="border: #ccc 1px solid; background-color:#FFFFFF; font-size:12px;font-family:微软雅黑;width:50px;"/>
-	                            <!--          <img id="indicator" src="/JFSystem/images/loading,png" style="display:none"/>	 -->
 	                                    </td>
 	                                </tr>
 	                            </table>
@@ -61,7 +68,6 @@
                         <c:if test="${not empty stu }">
                         	欢迎你，${stu.stuRealname} &nbsp;&nbsp;
                         <a href="javascript:void(0)" onclick="logout()">安全退出</a>
-                  <!--       <img id="indicator1" src="/JFSystem/images/loading,png" style="display:none"/>	 -->
                         <br/><br/><br/>
                        </c:if> 
                     </td>
@@ -93,36 +99,7 @@ $(function(){
            {
                 alert("请输入学号");
            }
-    });
-  
-  <!--  
-  //获取id为btnLogin登录按钮，为其绑定点击事件
-
-	$("btnLogin").click(function(){
-		var username = $("#username").val();
-		var password = $("#userPw").val();
-		
-		var um = $.trim(username);
-		var up = $.trim(password);
-		
-		if(null == um || " " == um)
-		{
-				alert("请输入合法学号");
-				return false;
-		}
-		
-		
-		if(null == up || "" == up)
-		{
-				alert("请输入密码");
-				return false;
-		}
-		
-		alert($("#um").val()+":"+$("#up").val());
-		document.getElementById("fm").submit();
-	});
-  -->
-  
+    });  
 });
 
 

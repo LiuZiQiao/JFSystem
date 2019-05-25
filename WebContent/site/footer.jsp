@@ -14,7 +14,7 @@
      <script type="text/javascript" src="${pageContext.request .contextPath}/js/jQuery.js"></script>
 </head>
 <body>
-	<div class="footer">
+	<div class="footer">	
 		<p>This  is footer</p>
 	</div>
 </body>

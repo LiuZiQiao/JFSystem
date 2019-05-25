@@ -12,26 +12,43 @@
     <link rel="stylesheet" href="${pageContext.request .contextPath}/css/qiantai.css" type="text/css" charset="UTF-8"/>
       <script type="text/javascript" src="${pageContext.request .contextPath}/js/jquery-2.1.0.min.js"></script>
      <script type="text/javascript" src="${pageContext.request .contextPath}/js/jQuery.js"></script>
-     
+	<style>
+	#div1{
+		width:1000px;
+		height:230px;
+    	background-image:url(${pageContext.request .contextPath}/images/top2.jpg);
+		background-repeat:no-repeat;
+		background-position:center;
+		text-align:center;
+    }
+	body{
+		font-family:"微软雅黑";
+		margin:0px;
+		padding:0px;
+		font-size:12px;
+		height:36px;
+	}
+	</style>
 </head>
 <title>教学辅助系统</title>
 <body>
-        <div id="weapper">
-                <div id="header"></div>
-        
-        	   <div id="left">
-        	   			<jsp:include flush="true"  page="/site/left.jsp"></jsp:include>
-        	   </div>
-                
-                <div id="right" style="margin-left:70px;margin-top:70px">
-	                	<h2>欢迎进入教学辅助系统 </h2>
-		                	<div id="welcome"  style="margin-left:30px;font-size:15px;margin-top:70px">
-		                			<p>获取视频、笔记、代码</p>
-		                			<br/><br/>
-		                	</div>
-		                	<%@ include file="/site/footer.jsp" %>
-	             </div>
+	<center>
+    <div>
+        <div id="div1">
+            <h1>教务管理</h1>
         </div>
-      
- </body>   
+        <div style="overflow:hidden;white-space:nowrap">
+    	<iframe src="${pageContext.request .contextPath}/site/left.jsp" name="leftframe" scrolling="no" height="540px"  width="300px" frameborder="0"></iframe>
+        <iframe src="${pageContext.request .contextPath}/site/right.jsp" name="rightframe" scrolling="no" height="540px"  width="700px" frameborder="0"></iframe>
+        </div>
+    </div>
+    </center>
+                <div id="footer">
+                    <div id="copyright">
+    					Copyright &copy;点心网络文化工作室&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="/JFSystem/site/Instruction.jsp">欢迎加入</a>
+
+                    </div>
+                </div>
+</body>
+</html>   
 </html> 
