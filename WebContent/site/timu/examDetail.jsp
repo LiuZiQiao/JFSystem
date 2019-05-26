@@ -21,44 +21,48 @@
 		.clear{clear:both}
 	</style>
 	<script type="text/javascript" src="${pageContext.request .contextPath}/js/public.js"></script>
-	<!-- 
+	
 	<script type="text/javascript">
 			function down1(path,oIdName)
 			{
-				var url="/JFSystem/VedioServlet?method=downloadVedio&vedioAttachment="+path+"&vedioOIdName";
+				var url="/JFSystem/ExamServlet?method=downloadExam&ExamAttachment="+path;
 				window.oper(url,"_self");
 			}
-			
-			function vedioBofang(attachMent)
-			{
-				var url="/JFSystem/bofang/bofang.jsp";
-			}
-	
 	</script>
-	 -->
 </head>
 <body>
-                <div id="right">
-	                <h2>教学资料 </h2>
+                <div id="right" ">
+	                <h2>试题下载 </h2>
+			            <div id="welcome">
+			                <div>
 			                	<div class="c1-body">
 			                		<table width="100%" border="0">
 			                			<tr>
-			                				<td align="center">文档名：${doc.docName}<hr/></td>
+			                				<td align="center">${exam.examName}<hr/></td>
 			                			</tr>
 			                			<tr>
+			                				<td aligin="center" style="word-break:break-all;">资料名称
+			                				${exam.examPro }
+			                				<hr/>
+			                				</td>
+			                			</tr>
+			                			
+			                			<tr>
 			                				<td aligin="center">
-			                					<a href="${pageContext.request.contextPath }/DocServlet?method=ViewContext&id=${doc.docId}" style="font-size:13px;  color:red">查看</a>
-			                				<!-- 	<a href="${pageContext.request.contextPath }/DocServlet?method=DownDoc&id=${doc.docId}" style="font-size:13px;  color:red">下载</a>
-			                					 -->
+			                					<a href="${pageContext.request.contextPath }/ExamServlet?method=downloadExam&id=${exam.examId}" style="font-size:13px;  color:red">下载</a>
 			                					<hr/>
 			                				</td>
 			                			</tr>
 			                			
 			                			<tr>
-			                				<td aligin="center"> 发布时间：${doc.uploadTime}</td>
+			                				<td aligin="center"> 发布时间：${exam.uploadTime}</td>
 			                			</tr>
 			                		</table>		
 			                	</div>
                             </div>
+                        <!--     <p class="more"><a href="/JFSystem/site/vedio/vedioAll.jsp">more</a></p>  -->
+		                </div>
+                </div>
+    
 </body>
 </html>

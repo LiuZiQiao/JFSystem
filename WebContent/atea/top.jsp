@@ -68,14 +68,14 @@
 									<tr>
 										<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
 										<td>
-											<div style="font-size:25px;font-wigth:bolder;display:bloder">
-											点心网络文化工作室
+											<div style="font-size:30px;font-wigth:bolder;display:bloder">
+												教学辅助管理系统后台
 											</div>
 										</td>
 									</tr>
 								</table>
 							</td>
-							<td width="45%" valign="top" height="64" background="/JFSystem/images/main_01.gif">
+							<td width="45%" valign="top" height="64" background="red">
 								<table>
 									<tr height="8"><td></td></tr>
 									<tr>
@@ -96,7 +96,6 @@
 									</tr>
 								</table>
 							</td>
-							
 						</tr>
 					</table>
 				</td>

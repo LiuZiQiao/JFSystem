@@ -37,18 +37,14 @@
         <div id="div1">
             <h1>教务管理</h1>
         </div>
-        <div style="overflow:hidden;white-space:nowrap">
-    	<iframe src="${pageContext.request .contextPath}/site/left.jsp" name="leftframe" scrolling="no" height="540px"  width="300px" frameborder="0"></iframe>
-        <iframe src="${pageContext.request .contextPath}/site/right.jsp" name="rightframe" scrolling="no" height="540px"  width="700px" frameborder="0"></iframe>
-        </div>
+	        <div style="overflow:hidden;white-space:nowrap">
+		    	<iframe src="${pageContext.request .contextPath}/site/left.jsp" name="leftframe" scrolling="no" height="540px"  width="300px" frameborder="0"></iframe>
+		        <iframe src="${pageContext.request .contextPath}/site/right.jsp" name="rightframe" scrolling="no" height="540px"  width="700px" frameborder="0"></iframe>
+	        </div>
+        <iframe src="${pageContext.request .contextPath}/site/footer.jsp" name="rightframe" scrolling="no" height="540px"  width="800px" frameborder="0"></iframe>
     </div>
     </center>
-                <div id="footer">
-                    <div id="copyright">
-    					Copyright &copy;点心网络文化工作室&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="/JFSystem/site/Instruction.jsp">欢迎加入</a>
 
-                    </div>
-                </div>
 </body>
 </html>   
 </html> 

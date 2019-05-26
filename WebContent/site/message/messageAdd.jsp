@@ -65,14 +65,8 @@
 			                	</div>
                             </div>
 		                </div>
-		            	<%@ include file="/site/footer.jsp" %>
                 </div>
                 <div class="clear"></div>
-                <div id="footer">
-                    <div id="copyright">
-                        Copyright &copy;点心网络文化工作室&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="/JFSystem/site/Instruction.jsp">欢迎加入</a>
-                    </div>
-                </div>
         </div>
 </body>
 

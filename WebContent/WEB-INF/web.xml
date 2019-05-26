@@ -20,6 +20,15 @@
   </servlet-mapping>
   
     <servlet>
+    <servlet-name>ExamServlet</servlet-name>
+    <servlet-class>com.lxk.JFSystem.web.servlets.ExamServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>ExamServlet</servlet-name>
+    <url-pattern>/ExamServlet</url-pattern>
+  </servlet-mapping>
+  
+    <servlet>
     <servlet-name>DocServlet</servlet-name>
     <servlet-class>com.lxk.JFSystem.web.servlets.DocServlet</servlet-class>
   </servlet>

@@ -14,8 +14,11 @@
      <script type="text/javascript" src="${pageContext.request .contextPath}/js/jQuery.js"></script>
 </head>
 <body>
-	<div class="footer">	
-		<p>This  is footer</p>
-	</div>
+                <div id="footer">
+                    <div id="copyright">
+    					Copyright &copy;点心网络文化工作室&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="/JFSystem/login.jsp" target="_blank">管理员入口</a>
+
+                    </div>
+                </div>
 </body>
 </html>

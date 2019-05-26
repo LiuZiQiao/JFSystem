@@ -24,6 +24,11 @@ public class MessageServlet extends BaseServlet{
 		int currentPage = Integer.parseInt(request.getParameter("num"));
 		
 		Student student= (Student)(request.getSession().getAttribute("stu"));
+		//未登录时查看留言需要登录
+		if (student == null) {
+//			request.setAttribute("msg","请登录后发布留言");
+			response.getWriter().write("<script   language=javascript>alert('请登录后查看发布留言！');</script>");
+		}
 		System.out.println(student);
 		MessageService ms = new MessageService();
 		PageModel pageModel = ms.findMessageWithPage(currentPage,student);
@@ -41,6 +46,7 @@ public class MessageServlet extends BaseServlet{
 public String addMessage(HttpServletRequest request, HttpServletResponse response) throws SQLException, IOException {
 		String content  = request.getParameter("content");
 		Student student = (Student)request.getSession().getAttribute("stu");
+		
 		Message message = new  Message();
 		message.setContent(content);
 		message.setStuId(student.getStuId());

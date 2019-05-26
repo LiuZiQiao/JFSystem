@@ -32,7 +32,9 @@ public class VedioServlet extends BaseServlet{
 				//将集合放入request域对象内
 				request.setAttribute("list", list);
 				//转发到/site/vedio/vedioPrev.jsp
-				return "/site/vedio/vedioPrev.jsp";
+//				return "/site/vedio/vedioPrev.jsp";
+				response.sendRedirect(request.getContextPath()+"/site/vedio/vedioPrev.jsp");
+				return null;
 			}
 			
 			

@@ -5,7 +5,7 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
-    <meta http-equiv="pragma" content="no-cache"/>
+	<meta http-equiv="pragma" content="no-cache"/>
     <meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/>
     <meta http-equiv="cache-control" content="no-cache"/>
     <meta http-equiv="expires" content="0"/>
@@ -20,32 +20,32 @@
 		.f-left{float:left}
 		.clear{clear:both}
 	</style>
+
 </head>
 <body>
-                
-                <div id="right" >
-	                <h2>教学视频 </h2>
+	<div id="right" >
+	                <h2>试题下载 </h2>
+			            <div id="welcome">
 			                <div>
 			                	<div class="c1-body">
-                                <c:forEach items="${page.list }" var="v">				
+                                <c:forEach items="${list }" var="v">				
 									<div class="c1-bline" style="padding:7px 0px;">
-									 <ul>
-			                			<li>
-										<div class="f-left">
-											<!-- 	<img src="/JFSystem/img/head-mark4.gif" aligin="middle" class="i"> -->
-											<a href="${pageContext.request.contextPath }/VedioServlet?method=findVedioByVid&id=${v.vedioId}"  target="rightframe">${v.vedioName}</a>
-										</div>	 
-										<div class="f-right">${v.uploadTime}</div>  <hr style="border:1px dashed #000; height:1px"/>             						
-											<div class="clear"></div>
-			                			</li>
-			                		</ul>
+										<ul>
+											<li >
+												<a href="${pageContext.request.contextPath }/ExamServlet?method=findExamByid&id=${v.examId}  " target="rightframe" >${v.examName}</a>									
+											<div class="f-right">${v.uploadTime}</div>       
+											<hr style="border:1px dashed #000; height:1px"/>    						
+											</li> 
+										</ul>
 			                		</div>
-                                </c:forEach> 
-                        		<%@ include  file ="/jsp/pageFile.jsp" %>  
-                        		<!--<jsp:include flush="true"  page="/jsp/pageFile.jsp"></jsp:include>  -->
+                                </c:forEach>
+			                				
+                                    <div class="pg-3"></div>
 			                	</div>
-			                	</div>
-			               </div>
+                            </div>
+                            <p class="more"><a href="${pageContext.request.contextPath }/ExamServlet?method=findExamWithPage&num=1" target="rightframe">more</a></p>
+		                </div>
+                </div>
                 <div class="clear"></div>
 </body>
 </html>

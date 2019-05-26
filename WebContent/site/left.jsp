@@ -54,7 +54,7 @@ table{
 									<div id="div1">
 										<a href="${pageContext.request .contextPath}/DocServlet?method=findPrevDoc" target="rightframe"><img class="img1" src="${pageContext.request .contextPath}/images/jxzl.png " /></a><br />
 										<a href="${pageContext.request .contextPath}/VedioServlet?method=findPrevVedio" target="rightframe"><img class="img1" src="${pageContext.request .contextPath}/images/jxsp.png " alt="alt" /></a><br />
-										<a href="/JFSystem/ExamServlet?method=findAllExamWithPage&num=1" target="rightframe"><img class="img1" src="${pageContext.request .contextPath}/images/stxz.png " /></a><br />
+										<a href="${pageContext.request .contextPath}/ExamServlet?method=findPrevExam" target="rightframe"><img class="img1" src="${pageContext.request .contextPath}/images/stxz.png " /></a><br />
 										<a href="${pageContext.request .contextPath}/MessageServlet?method=findMessageWithPage&num=1" target="rightframe"><img class="img1" src="${pageContext.request .contextPath}/images/ssjl.png " /></a><br />
 									</div>
         <!--     	<jsp:include flush="true" page="/site/userlogin/userlogin.jsp"></jsp:include> -->

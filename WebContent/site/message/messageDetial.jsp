@@ -27,7 +27,7 @@
 			                		<div style="width:100%;height:200px;border:0px solid green;margin-top:100px">
 										<form action="${pageContext.request.contextPath }/MessageServlet?method=addMessage"  target="rightframe" name="formAdd"  id="fm1" method="post">
 												<table align="center" border="0" cellpadding="4" cellspacing="1" bgcolor="#CBD8AC">
-	<!--  
+	<!--  待修改为显示留言互动详情
 													<tr bgcolor="#EEF4EA">
 														<td colspan="3" background="/...////img/" class="title"><span>信息交流</span></td>
 													</tr>
@@ -61,12 +61,6 @@
 		            	<%@ include file="/site/footer.jsp" %>
                 </div>
                 <div class="clear"></div>
-                <div id="footer">
-                    <div id="copyright">
-                        Copyright &copy;点心网络文化工作室&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="/JFSystem/site/Instruction.jsp">欢迎加入</a>
-                    </div>
-                </div>
-        </div>
 </body>
 
 </html>
