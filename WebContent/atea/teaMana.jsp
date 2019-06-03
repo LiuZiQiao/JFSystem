@@ -12,26 +12,23 @@
     <meta http-equiv="description" content="this is my page"/>
    <link rel="stylesheet" href="${pageContext.request .contextPath}/css/qiantai.css" type="text/css" charset="UTF-8"/>
 	<script type="text/javascript">
-		function teaDel(teaId)
+		function stuDel(stuId)
 		{
 			if(confirm('确定删除吗？'))
 			{
-				window.location.href="/JFSystem/TeacherServlet?method=delTeacherById="+teaId;
+				window.location.href="/JFSystem/StuServlet?method=delStudentById&num=1&stuId="+stuId;
 			}
 		}
 		
-		function teaAdd()
+		function stuAdd()
 		{
-			var url="/JFSystem/TeacherServlet?method=addTeacher";
+			var url="/JFSystem/atea/addStudent.jsp";
 			window.location.href=url;
 		}
 	</script>
 </head>
-<body leftmargin="2" topmargin="2" back background="/JFSystem/images/allbg.gif">
+<body leftmargin="2" topmargin="2"  background="/JFSystem/images/allbg.gif">
 	<table width="98%" border="0" cellpadding="2" cellspacing="1" bgcolor="#D1DDAA" align="center">
-		<tr bgcolor="#E7E7E7">
-			<td height="14" colspan="17"background="/JFSystem/images/tbg.gif">&nbsp;&nbsp;</td>
-		</tr>
 		<tr align="center" bgcolor="#FAFAF1" height="22">
 			<td width="4%">序号</td>
 			<td width="10%">编号</td>
@@ -39,36 +36,32 @@
 			<td width="10%">性别</td>
 			
 			<td width="10%">年龄</td>
-			<td width="10%">账号</td>
 			<td width="10%">密码</td>
 			<td width="10%">操作</td>
 		</tr>
 		
-		<c:forEach items="${page.list}" var="tea" varStatus="status">
+		<c:forEach items="${page.list}" var="stu" varStatus="status">
 		<tr align="center" bgcolor="#FFFFFF" onMouseMove="javascript:this.bgColor='red';" onclick="">
 			<td align="center" bgcolor="#FFFFFF">
 				${status.index+1 }
 			</td>
 			<td align="center" bgcolor="#FFFFFF">
-				${tea.teaNum }
+				${stu.stuNum }
 			</td>
 			<td align="center" bgcolor="#FFFFFF">
-			${tea.teaRealName}
+			${stu.stuRealname}
 			</td>
 			<td align="center" bgcolor="#FFFFFF">
-			${tea.teaSex}
+			${stu.stuSex}
 			</td>
 			<td align="center" bgcolor="#FFFFFF">
-			${tea.teaAge}
+			${stu.stuAge}
 			</td>
 			<td align="center" bgcolor="#FFFFFF">
-			${tea.loginName}
-			</td>
-			<td align="center" bgcolor="#FFFFFF">
-			${tea.loginPwd}
+			${stu.loginPw}
 			</td>			
 			<td align="center" bgcolor="#FFFFFF">
-					<a href="#" onclick="teaDel(${tea.teaId})"  class="pn-loperator">删除</a>
+					<a href="#" onclick="stuDel(${stu.stuId})"  class="pn-loperator">删除</a>
 			</td>
 		</tr>
 		</c:forEach>
@@ -78,7 +71,7 @@
 	<table width="98%" border="0" style="margin-top: 8px;margin-right: 8px;">
 		<tr>
 			<td>
-				<input type="button" value="添加教师" style="width: 80px"; onclick="teaAdd()"/>
+				<input type="button" value="添加学生" style="width: 80px" onclick="stuAdd()"/>
 			</td>
 		</tr>
 	</table>

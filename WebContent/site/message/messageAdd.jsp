@@ -19,15 +19,6 @@
 	</style>
 </head>
 <body>
-	   <div id="weapper">
-            <div id="header">
-
-            </div>
-        
-        	   <div id="left">
-        	   			<jsp:include flush="true"  page="/site/left.jsp"></jsp:include>
-        	   </div>
-                
                 <div id="right" ">
 	                <h2>留言互动 </h2>
 			            <div id="welcome">
@@ -67,7 +58,6 @@
 		                </div>
                 </div>
                 <div class="clear"></div>
-        </div>
 </body>
 
      <script type="text/javascript">

@@ -16,7 +16,7 @@
 <body>
                 <div id="footer">
                     <div id="copyright">
-    					Copyright &copy;点心网络文化工作室&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="/JFSystem/login.jsp" target="_blank">管理员入口</a>
+    					Copyright &copy;教学辅助管理系统&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="/JFSystem/login.jsp" target="_blank">管理员入口</a>
 
                     </div>
                 </div>

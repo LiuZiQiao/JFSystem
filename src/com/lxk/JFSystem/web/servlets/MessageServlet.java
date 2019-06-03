@@ -12,10 +12,12 @@ import javax.servlet.http.HttpServletResponse;
 import com.lxk.JFSystem.domain.Message;
 import com.lxk.JFSystem.domain.Student;
 import com.lxk.JFSystem.service.MessageService;
+import com.lxk.JFSystem.service.StuService;
 import com.lxk.JFSystem.utils.PageModel;
 import com.lxk.JFSystem.web.base.BaseServlet;
-import com.sun.org.apache.bcel.internal.generic.NEW;
 
+
+@SuppressWarnings("serial")
 public class MessageServlet extends BaseServlet{
 
 	public  String findMessageWithPage(HttpServletRequest request, HttpServletResponse response)
@@ -67,5 +69,20 @@ public String addMessage(HttpServletRequest request, HttpServletResponse respons
 		message = ms.findMessageWithId(id);
 		request.setAttribute("message", message);
 		return "/site/message/messageDetial.jsp";
+	}
+	
+	public String findMsgWithPage(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException, SQLException {
+		//接收当前页参数
+		int num=Integer.parseInt(request.getParameter("num"));
+		//调用业务层功能，返回PageModel
+		//	PageModel：分页查询，查询当前页中的视频信息，
+		//   							还需要分页参数
+		MessageService messageService = new MessageService();
+		PageModel pm = messageService.findMessageWithPage(num);
+		//将PageModel放入request域对象内
+		request.setAttribute("page", pm);
+	
+		//转发到/site/vedio/vedioAll.jsp
+		return "/atea/viewMessage.jsp";
 	}
 }

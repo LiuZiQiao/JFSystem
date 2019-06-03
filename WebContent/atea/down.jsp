@@ -5,10 +5,15 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>Insert title here</title>
+<style type="text/css">
+div{
+text-align:center;
+}
+</style>
 </head>
 <body>
-<div >
-<p>Down</p>
+<div>
+<p>Copyright &copy;教学辅助管理系统&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</p>
 </div>
 </body>
 </html>

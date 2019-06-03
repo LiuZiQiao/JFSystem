@@ -10,13 +10,23 @@ public class Test {
 
 	public static void main(String[] args) {
 		
-		TeacherDao  teacherDao = new TeacherDao();
+		VedioDao vedioDao = new VedioDao();
 		try {
-			Teacher teacher = teacherDao.teaLogin("lxk", "123456");
-			System.out.println( teacher);
+//			List<Vedio> list = vedioDao.findVedioWithPage(0, 5);
+			List<Vedio> list = vedioDao.findPrevVedio();
+			System.out.println(list);
 		} catch (SQLException e) {
+			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
+		
+//		TeacherDao  teacherDao = new TeacherDao();
+//		try {
+//			Teacher teacher = teacherDao.teaLogin("lxk", "123456");
+//			System.out.println( teacher);
+//		} catch (SQLException e) {
+//			e.printStackTrace();
+//		}
 		
 //		VedioDao vedioDao = new  VedioDao();
 //		try {

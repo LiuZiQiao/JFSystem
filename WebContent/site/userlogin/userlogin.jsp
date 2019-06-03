@@ -66,7 +66,7 @@
                         <br/>
                         
                         <c:if test="${not empty stu }">
-                        	欢迎你，${stu.stuRealname} &nbsp;&nbsp;
+                        	<h3>欢迎你，${stu.stuRealname}</h3>
                         <a href="javascript:void(0)" onclick="logout()">安全退出</a>
                         <br/><br/><br/>
                        </c:if> 

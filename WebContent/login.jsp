@@ -17,7 +17,7 @@
 <body>
 	<div style="margin:0px auto; width:936px;margin-top:180px;font-family:微软雅黑; font-size:33px;">
 	<%--	<img src="${pageContext.request.contextPath }/img/dianxin.jpg"  style="margin:0px auto; width:936px;margin-top:180px"/> --%>
-		点心网络文化工作室
+		教学辅助管理系统
 	</div>
  	<div style="background-color:#278296;margin-top:20px;"> 
 		<div style="margin:0px auto;width:936px">

@@ -22,19 +22,25 @@
 	</style>
 </head>
 <body>
-                <div id="right" ">
-	                <h2>留言互动 </h2>
+                <div id="right" >
+	                <h2 style="padding-left:30px; font-size:25px">留言互动 </h2>
+			        <hr style="height:3px;border:none;border-top:3px groove skyblue"/> 
+			            
 			            <div id="welcome">
 			                <div>
 			                	<div class="c1-body">
                                 <c:forEach items="${page.list }" var="v" varStatus="sta">				
-									<div class="c1-bline" style="padding:7px 0px;">
+									<div class="c1-bline" >
+									<ul>
+									<li>
 										<div class="f-left">
 										<!-- 	<img src="/JFSystem/img/head-mark4.gif" aligin="middle" class="img-vm"> -->
-											<a href="${pageContext.request.contextPath }/MessageServlet?method=findMessageWithId&id=${v.messageId}"  target="rightframe">${v.content}</a>
+											<a href="${pageContext.request.contextPath }/MessageServlet?method=findMessageWithId&id=${v.messageId}"  target="rightframe" style="text-decoration:none; color:black; font-size:20px;">${v.content}</a>
 										</div>	 
-										<div class="f-right">${v.leaveWordTime}</div> <hr style="border:1px dashed #000; height:1px"/>          						
-										<div claess="clear"></div>
+										<div class="f-right">${v.leaveWordTime}</div> <hr style="height:2px;border:none;border-top:2px groove skyblue"/>          						
+										<div class="clear"></div>
+										</li>
+									</ul>
 			                		</div>
                                 </c:forEach>
 									<center><a href="${pageContext.request.contextPath }/MessageServlet?method=addMessageUI" target="rightframe" style="color:black">发布留言</a></center>

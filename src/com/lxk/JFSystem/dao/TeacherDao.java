@@ -8,7 +8,9 @@ import org.apache.commons.dbutils.handlers.BeanHandler;
 import org.apache.commons.dbutils.handlers.BeanListHandler;
 import org.apache.commons.dbutils.handlers.ScalarHandler;
 
+import com.lxk.JFSystem.domain.Student;
 import com.lxk.JFSystem.domain.Teacher;
+import com.lxk.JFSystem.domain.Vedio;
 import com.lxk.JFSystem.utils.JDBCUtils;
 
 public class TeacherDao {
@@ -21,10 +23,9 @@ public class TeacherDao {
 	}
 
 	public List<Teacher> findMessageWithPage(int startIndex, int pageSize) throws SQLException {
-		String sql = "select* from t_tea  limit ?,?";
+		String sql = "select* from t_tea where del = 'no' limit ?,?";
 		QueryRunner qr = new QueryRunner(JDBCUtils.getDataSource());
-		List<Teacher> list = qr.query(sql, new BeanListHandler<Teacher>(Teacher.class));
-		return list;
+		return qr.query(sql, new BeanListHandler<Teacher>(Teacher.class),startIndex,pageSize);
 	}
 
 	public int findTotalTeacher() throws SQLException {
@@ -33,5 +34,15 @@ public class TeacherDao {
 		Long num =(Long)qr.query(sql,new ScalarHandler());
 		return num.intValue();
 	}
-
+	public void delTeacherById(String id)throws SQLException{
+		String sql = "UPDATE t_tea SET del = 'yes' WHERE teaId=?";
+		QueryRunner qr = new QueryRunner(JDBCUtils.getDataSource());
+		qr.update(sql, id);//执行SQL语句
+	}
+	public   int addTeacher(Teacher teacher) throws SQLException {
+		String sql = "insert into t_tea(teaNum,teaRealName,teaSex,teaAge,loginName,loginPwd,del) value(?,?,?,?,?,?,?)";
+		QueryRunner qr = new QueryRunner(JDBCUtils.getDataSource());
+		Object[] pargam = {teacher.getTeaNum(),teacher.getTeaRealName(),teacher.getTeaSex(),teacher.getTeaAge(),teacher.getLoginName(),teacher.getLoginPwd(),teacher.getDel()};
+		return qr.update(sql,pargam);
+	}
 }

@@ -70,15 +70,35 @@ public class ExamServlet extends BaseServlet{
 		//实例一个file对象，表示下载的资料
 		File file = new File(realPath,exam.getExamAttachment());
 		//通过response对象设置一对消息头
-//		response.setHeader("Content-disposition", "attachment;filename="+vedio.getVedioAttachment());
-		DownLoadUtils.setConentType(request, exam.getExamAttachment(), response);
+		response.setHeader("Content-disposition", "attachment;filename="+exam.getExamAttachment());
+		
+		//设置文件ContentType类型，这样设置，会自动判断下载文件类型  
+		response.setContentType("multipart/form-data");
+		
+//		DownLoadUtils.setConentType(request, exam.getExamAttachment(), response);
+		
+		InputStream in = new FileInputStream(file);  
+	       OutputStream out = response.getOutputStream();  
+	         
+	       //写文件  
+	       int b;  
+	       while((b=in.read())!= -1)  
+	       {  
+	           out.write(b);  
+	       }  
+	         
+	       in.close();  
+	       out.close();  
+		
 		//通过file获取输入流
-		InputStream is = new FileInputStream(file);
-		OutputStream os = response.getOutputStream();
-		IOUtils.copy(is, os);
-		IOUtils.closeQuietly(is);
-		IOUtils.closeQuietly(os);
+//		InputStream is = new FileInputStream(file);
+//		OutputStream os = response.getOutputStream();
+//		IOUtils.copy(is, os);
+//		IOUtils.closeQuietly(is);
+//		IOUtils.closeQuietly(os);
+		System.out.println("success download");
 		return null;
 	}
+
 
 }

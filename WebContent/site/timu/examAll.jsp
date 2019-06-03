@@ -23,21 +23,29 @@
 </head>
 <body>
                 
-                <div id="right" ">
-	                <h2>试题下载</h2>
+                <div id="right" >
+	                <h2 style="padding-left:30px; font-size:25px">试题下载</h2>
+	                 <hr style="height:3px;border:none;border-top:3px groove skyblue"/> 
 			            <div id="welcome">
 			                <div>
 			                	<div class="c1-body">
                                 <c:forEach items="${page.list }" var="v">				
-									<div class="c1-bline" style="padding:7px 0px;">
+									<div class="c1-bline" >
+									<ul>
+									<li>
 										<div class="f-left">
-											<!-- 	<img src="/JFSystem/img/head-mark4.gif" aligin="middle" class="i"> -->
-											<a href="${pageContext.request.contextPath }/ExamServlet?method=findExamByid&id=${v.examId}"  target="rightframe">${v.examName}</a>
+											<a href="${pageContext.request.contextPath }/ExamServlet?method=findExamByid&id=${v.examId}"  target="rightframe" style="text-decoration:none; color:black; font-size:20px;">${v.examName}</a>
 										</div>	 
-										<div class="f-right">${v.uploadTime}</div>  <hr style="border:1px dashed #000; height:1px"/>             						
-										<div claess="clear"></div>
+										<div class="f-right">${v.uploadTime}</div>  
+										<hr style="height:2px;border:none;border-top:2px groove skyblue"/>              						
+										<div class="clear"></div>
+									</li>
+									</ul>
 			                		</div>
                                 </c:forEach>
+                               </div>
+                               </div>
+                               </div>
                                </div>
 </body>
 </html>

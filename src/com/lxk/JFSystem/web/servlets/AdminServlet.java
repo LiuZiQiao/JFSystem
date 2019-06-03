@@ -25,7 +25,7 @@ public class AdminServlet extends BaseServlet {
 			return "/login.jsp";
 		}else {
 			request.getSession().setAttribute("admin", admin);
-			response.sendRedirect(request.getContextPath()+"/admin/index.jsp");
+			response.sendRedirect(request.getContextPath()+"/admin/adminIndex.jsp");
 			return null;
 		}
 	}

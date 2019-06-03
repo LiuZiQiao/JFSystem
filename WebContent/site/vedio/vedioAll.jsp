@@ -24,23 +24,24 @@
 <body>
                 
                 <div id="right" >
-	                <h2>教学视频 </h2>
+	                <h2 style="padding-left:30px; font-size:25px">教学视频 </h2>
+	                <hr style="height:3px;border:none;border-top:3px groove skyblue"/> 
 			                <div>
 			                	<div class="c1-body">
                                 <c:forEach items="${page.list }" var="v">				
-									<div class="c1-bline" style="padding:7px 0px;">
+									<div class="c1-bline" >
 									 <ul>
 			                			<li>
 										<div class="f-left">
 											<!-- 	<img src="/JFSystem/img/head-mark4.gif" aligin="middle" class="i"> -->
-											<a href="${pageContext.request.contextPath }/VedioServlet?method=findVedioByVid&id=${v.vedioId}"  target="rightframe">${v.vedioName}</a>
+											<a href="${pageContext.request.contextPath }/VedioServlet?method=findVedioByVid&id=${v.vedioId}"  target="rightframe" style="text-decoration:none; color:black; font-size:20px;">${v.vedioName}</a>
 										</div>	 
-										<div class="f-right">${v.uploadTime}</div>  <hr style="border:1px dashed #000; height:1px"/>             						
+										<div class="f-right">${v.uploadTime}</div>  <hr style="height:2px;border:none;border-top:2px groove skyblue"/>             						
 											<div class="clear"></div>
 			                			</li>
 			                		</ul>
 			                		</div>
-                                </c:forEach> 
+                                </c:forEach>
                         		<%@ include  file ="/jsp/pageFile.jsp" %>  
                         		<!--<jsp:include flush="true"  page="/jsp/pageFile.jsp"></jsp:include>  -->
 			                	</div>

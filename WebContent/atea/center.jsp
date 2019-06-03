@@ -9,31 +9,23 @@
     <meta http-equiv="expires" content="0"/>
     <meta http-equiv="keywords" content="keyword1,keyword2,keyword3"/>
     <meta http-equiv="description" content="this is my page"/>
-    <script type="text/javascript">
-        	body{
-    		margin-left: 0px;
-    		margin-top: 0px;
-    		margin-right: 0px;
-			margin-bottom: 0px;
-    	}
-    	.STYLE1(font-size:12px)
-    	.STYLE2{
-    			color:#03515d;
-    			font-size:12px;
-    	}
-    	</script>
+    <style type="text/css">
+    .div1{
+    position:relative;
+    text-align:center;
+    top:50px;}
+    
+    
+    
+   </style>
 </head>
 <body>
-	<table width="100%" height="100%" border="0" cellpadding="0" cellspacing="0">
-		<tr>
-			<td width="8" background="/JFSystem/images/main_29.gif">	</td>
-			<td align="center" valign="top">
-				<iframe name="11" src="/JFSystem/admin/middel.jsp" height="100">
-				浏览器不支持嵌入式框架，或被配置为不显示嵌入式框架。
-				</iframe>
-			</td>
-			<td width="7" background="/JFSystem/images/main_32.gif"></td>
-		</tr>
-	</table>
+<div class="div1">
+<a href="${pageContext.request.contextPath}/StuServlet?method=findStudentWithPage&num=1" target="centerFrame">管理学生信息</a>
+<a href="${pageContext.request.contextPath }/StuServlet?method=findVedioWithPage&num=1" target="centerFrame">管理视频信息</a>
+<a href="${pageContext.request.contextPath }/StuServlet?method=findDocWithPage&num=1" target="centerFrame">管理文档信息</a>
+<a href="${pageContext.request.contextPath }/MessageServlet?method=findMsgWithPage&num=1" target="centerFrame">回复留言信息</a>
+</div>
+	
 </body>
 </html>

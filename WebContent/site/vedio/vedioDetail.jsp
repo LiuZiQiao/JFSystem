@@ -56,7 +56,8 @@
 			                			<tr>
 			                				<td aligin="center">
 			                					<a href="${pageContext.request.contextPath }/VedioServlet?method=downloadVedio&id=${vedio.vedioId}" style="font-size:13px;  color:red">下载</a>
-			                					<a href="${pageContext.request.contextPath }/VedioServlet?method=playVedioById&id=${vedio.vedioId}" class="pn-Loperator" style="color:red">播放</a>
+			                		<%-- 			<a href="${pageContext.request.contextPath }/VedioServlet?method=playVedioById&id=${vedio.vedioId}" class="pn-Loperator" style="color:red">播放</a>
+			                			--%>		<a href="${pageContext.request.contextPath }/play/playVedio.html" class="pn-Loperator" style="color:red">播放</a>
 			                					<hr/>
 			                				</td>
 			                			</tr>
@@ -70,13 +71,6 @@
                         <!--     <p class="more"><a href="/JFSystem/site/vedio/vedioAll.jsp">more</a></p>  -->
 		                </div>
                 </div>
-                <div class="clear"></div>
-                <div id="footer">
-                    <div id="copyright">
-                        Copyright &copy;点心网络文化工作室&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="/JFSystem/site/Instruction.jsp">欢迎加入</a>
-                    </div>
-                    <div id="footerline"></div>
-                </div>
-        </div>
+
 </body>
 </html>

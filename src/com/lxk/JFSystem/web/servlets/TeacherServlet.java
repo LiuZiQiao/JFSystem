@@ -6,7 +6,9 @@ import java.sql.SQLException;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import com.lxk.JFSystem.domain.Student;
 import com.lxk.JFSystem.domain.Teacher;
+
 import com.lxk.JFSystem.service.TeacherService;
 import com.lxk.JFSystem.utils.PageModel;
 import com.lxk.JFSystem.web.base.BaseServlet;
@@ -45,8 +47,38 @@ public class TeacherServlet extends BaseServlet {
 		int currentPage = Integer.parseInt(request.getParameter("num"));
 		TeacherService ms = new TeacherService();
 		PageModel pageModel = ms.findTeacherWithPage(currentPage);
+		System.out.println(pageModel);
+		request.setAttribute("page",pageModel);
+		
+		return "/admin/adminMana.jsp";
+	}
+	
+	public String delTeacherById(HttpServletRequest request, HttpServletResponse response) throws IOException, SQLException{
+		String teacherId = request.getParameter("teaId");
+		int currentPage = Integer.parseInt(request.getParameter("num"));
+		
+		TeacherService ms = new TeacherService();
+		PageModel pageModel = ms.delTeacherById(currentPage,teacherId);
 		
 		request.setAttribute("page",pageModel);
-		return "/atea/teaMana.jsp";
+		return "/admin/adminMana.jsp";
 	}
+	public String addTeacher(HttpServletRequest request, HttpServletResponse response) throws IOException, SQLException{
+		int currentPage = Integer.parseInt(request.getParameter("num"));
+		Teacher teacher = new Teacher();
+		
+		teacher.setTeaNum(new String(request.getParameter("teaNum").getBytes("iso-8859-1"),"utf-8"));
+		teacher.setTeaRealName(request.getParameter("teaRealName"));
+		teacher.setTeaSex(request.getParameter("teaSex"));
+		teacher.setTeaAge(new String(request.getParameter("teaAge").getBytes("iso-8859-1"),"utf-8"));
+		teacher.setLoginName(request.getParameter("loginName"));
+		teacher.setLoginPwd(new String(request.getParameter("loginPwd").getBytes("iso-8859-1"),"utf-8"));
+		teacher.setDel("no");
+		TeacherService ms = new TeacherService();
+		System.out.println(teacher);
+		PageModel pageModel = ms.addTeacher(currentPage, teacher);
+		
+		request.setAttribute("page",pageModel);
+		return "/admin/adminMana.jsp";
+	} 
 }

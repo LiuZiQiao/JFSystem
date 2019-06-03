@@ -28,7 +28,7 @@ public class VedioDao {
 	}
 
 	public List<Vedio> findVedioWithPage(int i, int j) throws SQLException {
-		String sql = "select *from t_vedio limit ? ,?";
+		String sql = "select *from t_vedio   limit ? ,?";
 		QueryRunner qr  = new QueryRunner(JDBCUtils.getDataSource());
 		return qr.query(sql, new BeanListHandler<Vedio>(Vedio.class),i,j);
 	}
@@ -38,4 +38,17 @@ public class VedioDao {
 		QueryRunner qr = new QueryRunner(JDBCUtils.getDataSource());
 		 return qr.query(sql, new BeanHandler<Vedio>(Vedio.class),vedioId);
 	}
+	
+	public int uploadVedio(Vedio vedio) throws SQLException {
+		String sql = "insert into t_vedio(vedioName,vedioPro,vedioAttachment,AttachmentOIdName,uploadTime,del) value(?,?,?,?,?,?)";
+		QueryRunner qr = new QueryRunner(JDBCUtils.getDataSource());
+		Object[] param = {vedio.getVedioName(),vedio.getVedioPro(),vedio.getVedioAttachment(),vedio.getAttachmentOldName(),vedio.getUploadTime(),vedio.getDel()};
+		 return qr.update(sql, param);
+	}
+	public void delVedioById(String id)throws SQLException{
+		String sql = "UPDATE t_vedio SET del = 'yes' WHERE vedioId=?";
+		QueryRunner qr = new QueryRunner(JDBCUtils.getDataSource());
+		qr.update(sql, id);//执行SQL语句
+	}
+
 }

@@ -98,16 +98,4 @@ public class JDBCUtils{
 			e.printStackTrace();
 		}
 	}
-	
-//	public static void main(String[] args) {
-//		try {
-//			QueryRunner qr = new QueryRunner(JDBCUtils.getDataSource());
-//			String sql = "select * from vedio where vedioId=?";
-//			Vedio vedio = qr.query(sql, new BeanHandler<Vedio>(Vedio.class),1);
-//			System.out.println(vedio);
-//		} catch (SQLException e) {
-//			// TODO Auto-generated catch block
-//			e.printStackTrace();
-//		}
-//	}
 }

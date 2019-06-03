@@ -40,4 +40,18 @@ public class MessageDao {
 		QueryRunner qr = new QueryRunner(JDBCUtils.getDataSource());
 		return qr.query(sql, new BeanHandler<Message>(Message.class),id);
 	}
+
+	public int findTotalMessageById() throws SQLException {
+		String sql = "select count(*) from t_message ";
+		QueryRunner qr = new QueryRunner(JDBCUtils.getDataSource());
+		Long num =(Long)qr.query(sql,new ScalarHandler());
+		return num.intValue();
+	}
+
+	public List<Message> findMessageWithPage(int startIndex, int pageSize) throws SQLException {
+		String sql = "select* from t_message  order by leaveWordTime desc limit ?,?";
+		QueryRunner qr = new QueryRunner(JDBCUtils.getDataSource());
+		List<Message> list = qr.query(sql, new BeanListHandler<Message>(Message.class),startIndex,pageSize);
+		return list;
+	}
 }

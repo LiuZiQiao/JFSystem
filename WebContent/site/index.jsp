@@ -35,7 +35,7 @@
 	<center>
     <div>
         <div id="div1">
-            <h1>教务管理</h1>
+            <img src="${pageContext.request .contextPath}/img/main.png " style="width:500px;height:200px;margin-top:-40px;"/>
         </div>
 	        <div style="overflow:hidden;white-space:nowrap">
 		    	<iframe src="${pageContext.request .contextPath}/site/left.jsp" name="leftframe" scrolling="no" height="540px"  width="300px" frameborder="0"></iframe>
@@ -47,4 +47,3 @@
 
 </body>
 </html>   
-</html> 

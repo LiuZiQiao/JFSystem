@@ -1,9 +1,7 @@
-<%@ page language="java"  import="java.util.*"  contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8"%>
-<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<%@ page language="java"  import="java.util.*" contentType="text/html; charset=utf-8"  %>
+<!DOCTYPE html >
 <html>
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>Insert title here</title>
 </head>
 <body>
@@ -12,9 +10,14 @@
          <%--  <div style="width:100%; height: 147px;background-image: url('/JFSystem/images/bg.bmp');border: "></div> --%> 
             <div style="width:100%; height:100%;margin-top: 0px;border:0px solid green;padding:1px" >
                 <video width="100%" height="100%" controls="controls">
-            <%--<source src="test.mp4" type="video/mp4"/> --%>        
-                    <source type="video/mp4" src="${pageContext.request.contextPath }/uplaod/${vedio.vedioAttachment}" />
-                    <source src="${pageContext.request.contextPath }/uplaod/${vedio.vedioAttachment}" type="video/avi"/>
+        <%--            <source type="video/mp4" src="${pageContext.request.contextPath }/uplaod/${vedio.vedioAttachment}" />
+                    <source type="video/ogg" src="${pageContext.request.contextPath }/uplaod/${vedio.vedioAttachment}"/>
+             --%>
+            <object classid="clsid:22D6F312-B0F6-11D0-94AB-0080C74C7E95" height="320" id="MediaPlayer1" width="310">
+				     <br><param name="AutoStart" value="-1">
+				    <param name="ShowStatuBar" value="-1">
+				    <param name="Filename" value="<%=request.getContextPath()%>/upload/<%=request.getParameter("vedio")%>">
+			    </object>
                 </video>
             </div>
         </div>

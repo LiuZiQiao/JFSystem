@@ -18,11 +18,28 @@
     		margin-top: 0px;
     		margin-right: 0px;
 			margin-bottom: 0px;
+			
     	}
+    	
     	.STYLE1(font-size:12px)
     	.STYLE2{
     			color:#03515d;
     			font-size:12px;
+    	}
+    	.div1{
+    	position:relative;
+    	text=align:center;
+    	
+    	
+    	font-size:30px;
+    	font-wigth:bolder;
+    	display:bloder}
+    	
+    	.div2{
+    	position:relative;
+    	
+    	font-size:18px;
+    	margin-top: 27px;
     	}
     	
     	a:link{font-size:12px;text-decoration: none;color:#000000;}
@@ -30,6 +47,9 @@
     	a:hover{font-size:12px;text-decoration: none;color:#FF0000;}
     	a.v1:link{font-size:12px;text-decoration: none;color:#03515d;}
     	a.v1:visited{font-size:12px;text-decoration: none;color:#03515d;}
+    	
+    	
+    
     </style>
     <script type="text/javascript">
     		function logout()
@@ -42,12 +62,12 @@
     </script>
 </head>
 
-<body>
+<body >
 	<body>
 		<table width="100%" border="0" cellspacing="0" cellpadding="0">
 			<tr>
 				<td height="26" background="/JFSystem/images/main_03.gif">
-					<table width="100%" border="0" cellpadding="0" cellspacing="0">
+					<table width="100%" border="0" cellpadding="0" cellspacing="0" >
 						<tr>
 							<td width="227" height="26" background="/JFSystem/images/main_01.gif">&nbsp;</td>
 							<td>&nbsp;</td>
@@ -62,26 +82,28 @@
 				<td height="64">
 					<table width="100%" border="0" cellpadding="0" cellspacing="0">
 						<tr>
-							<td width="55%" valign="top" height="100" background="/JFSystem/images/main_01.gif">
-								<table>
+							<td  valign="top" height="100" background="/JFSystem/images/main_01.gif">
+								<table align="center">
 									<tr height="8"><td></td></tr>
 									<tr>
 										<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
 										<td>
-											<div style="font-size:30px;font-wigth:bolder;display:bloder">
+											<div class="div1">
 												教学辅助管理系统后台
 											</div>
 										</td>
 									</tr>
 								</table>
-							</td>
-							<td width="45%" valign="top" height="64" background="red">
-								<table>
+							 </td>
+						 </tr>
+						<tr>
+							<td  valign="top" height="64" background="red">
+								<table align="center">
 									<tr height="8"><td></td></tr>
 									<tr>
 										<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
 										<td>
-											<div style="font-size:18px;margin-top: 27px;">
+											<div class="div2">
 												<c:if test="${ not empty teacher}">
 												欢迎您：${teacher.teaRealName}
 												</c:if>	
@@ -97,6 +119,7 @@
 								</table>
 							</td>
 						</tr>
+						
 					</table>
 				</td>
 			</tr>

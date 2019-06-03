@@ -31,4 +31,16 @@ public class MessageService {
 			MessageDao messageDao = new MessageDao();
 			return  messageDao.findMessageWithId(id);
 		}
+
+		public PageModel findMessageWithPage(int currentPage) throws SQLException {
+			MessageDao mdDao = new MessageDao();
+			int totalRecords = mdDao.findTotalMessageById();
+			PageModel pageModel = new PageModel(currentPage, totalRecords, 5);
+
+			List<Message> list=mdDao.findMessageWithPage(pageModel.getStartIndex(),pageModel.getPageSize());
+			
+			pageModel.setList(list);
+			pageModel.setUrl("MessageServlet?method=findMessageWithPage");
+			return pageModel;
+		}
 }
